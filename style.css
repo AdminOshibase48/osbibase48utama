@@ -226,3 +226,23 @@ body {
 .btn-berita:hover {
   background: #164b86;
 }
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.galeri-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.galeri-grid img:hover {
+  transform: scale(1.03);
+}
