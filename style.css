@@ -100,3 +100,54 @@ body {
     font-size: 0.75rem;
   }
 }
+
+.about-section {
+  padding: 3rem 2rem;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1 1 40%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  color: #2a63a8;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.btn-berita {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #2a63a8;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-berita:hover {
+  background: #164b86;
+}
