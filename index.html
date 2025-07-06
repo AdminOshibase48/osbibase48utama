@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script>
-  const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co'; // GANTI dengan URL proyek kamu
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes';     // GANTI dengan anon key kamu
-  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oshibase48 - Komunitas Wota JKT48</title>
   <link rel="stylesheet" href="style.css?v=16" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes; // Aman, karena public anon
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  </script>
 </head>
 <body>
 
-  <!-- Header with Navbar -->
+  <!-- Header -->
   <header class="header">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
@@ -37,7 +37,7 @@
     </nav>
   </header>
 
-  <!-- Hero Slider Galeri -->
+  <!-- Hero Slider -->
   <section class="slider-section" data-aos="fade-up">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
@@ -49,7 +49,7 @@
     </div>
   </section>
 
-  <!-- Tentang Komunitas -->
+  <!-- Tentang -->
   <section class="section" data-aos="fade-up">
     <h2>Tentang Oshibase48</h2>
     <div class="about-box">
@@ -60,54 +60,28 @@
     </div>
   </section>
 
-  <!-- Galeri Preview -->
+  <!-- Galeri -->
   <section class="section" data-aos="fade-up">
     <h2>Galeri Komunitas</h2>
-    <div class="galeri-grid">
-      <img src="img/semarang.jpg" alt="galeri 1" />
-      <img src="img/bandung.jpg" alt="galeri 2" />
-      <img src="img/aboutosb.png" alt="galeri 3" />
-      <div id="galeri-container"></div>
-    </div>
+    <div id="galeri-container" class="galeri-grid"></div>
     <div class="center">
       <a href="galeri.html" class="btn-primary">Lihat Semua Galeri</a>
     </div>
   </section>
 
-  <!-- Berita Preview -->
+  <!-- Berita -->
   <section class="section" data-aos="fade-up">
     <h2>Berita Terbaru</h2>
-    <div class="berita-list">
-      <div class="berita-item">
-        <img src="https://jkt48.com/upload/news/686789fe458cc.jpg" />
-        <div>
-          <h3>Wallpaper Pack “Smash The Limits!”</h3>
-          <a href="https://jkt48.com/news/detail/id/1929?lang=id" class="btn-berita" target="_blank">Lihat Detail</a>
-        </div>
-      </div>
-      <div class="berita-item">
-        <img src="https://jkt48.com/upload/news/686690d3a3bd2.jpg" />
-        <div>
-          <h3>Photobook “ALL IN TOUR 2025”</h3>
-          <a href="https://jkt48.com/news/detail/id/1928?lang=id" class="btn-berita" target="_blank">Lihat Detail</a>
-        </div>
-        <div id="berita-container"></div>
-      </div>
-    </div>
+    <div id="berita-container" class="berita-list"></div>
     <div class="center">
       <a href="berita.html" class="btn-primary">Lihat Semua Berita</a>
     </div>
   </section>
 
-  <!-- Jadwal Preview -->
+  <!-- Jadwal -->
   <section class="section" data-aos="fade-up">
     <h2>Jadwal Kegiatan</h2>
-    <ul class="jadwal-list">
-      <li><strong>6 Juli 2025:</strong> Theater Show Team J</li>
-      <li><strong>7 Juli 2025:</strong> Event Fan Meet di Bandung</li>
-      <li><strong>9 Juli 2025:</strong> Online Meet & Greet</li>
-      <div id="jadwal-container"></div>
-    </ul>
+    <ul id="jadwal-container" class="jadwal-list"></ul>
     <div class="center">
       <a href="jadwal.html" class="btn-primary">Lihat Jadwal Lengkap</a>
     </div>
@@ -128,7 +102,7 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -138,8 +112,51 @@
       autoplay: { delay: 3000 },
       pagination: { el: ".swiper-pagination", clickable: true },
     });
+
+    // ===== Supabase Fetch =====
+    async function loadGaleri() {
+      const { data } = await supabase.from("galeri").select("*").order("created_at", { ascending: false });
+      const container = document.getElementById("galeri-container");
+      container.innerHTML = "";
+      data.forEach(item => {
+        container.innerHTML += `
+          <div class="galeri-card">
+            <img src="${item.image_url}" alt="${item.caption}" />
+            <p>${item.caption}</p>
+          </div>`;
+      });
+    }
+
+    async function loadBerita() {
+      const { data } = await supabase.from("berita").select("*").order("created_at", { ascending: false });
+      const container = document.getElementById("berita-container");
+      container.innerHTML = "";
+      data.forEach(item => {
+        container.innerHTML += `
+          <div class="berita-item">
+            <img src="${item.image_url}" />
+            <div>
+              <h3>${item.title}</h3>
+              <a href="berita.html?id=${item.id}" class="btn-berita">Lihat Detail</a>
+            </div>
+          </div>`;
+      });
+    }
+
+    async function loadJadwal() {
+      const { data } = await supabase.from("jadwal").select("*").order("tanggal", { ascending: true });
+      const container = document.getElementById("jadwal-container");
+      container.innerHTML = "";
+      data.forEach(item => {
+        container.innerHTML += `<li><strong>${item.tanggal}:</strong> ${item.kegiatan}</li>`;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadGaleri();
+      loadBerita();
+      loadJadwal();
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="index.js"></script>
 </body>
 </html>
