@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fcff;
+  color: #333;
+}
+
+.header {
+  background: #e4f3ff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid #b3dcff;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-small {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 0.75rem;
+}
+
+.brand h1, .brand h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2a63a8;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Slider Section */
+.slider-section {
+  padding: 2rem;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer */
+.footer {
+  background: #e4f3ff;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #b3dcff;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-sosmed a {
+  text-decoration: none;
+  color: #2a63a8;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+.footer-sosmed a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header, .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .brand h1, .brand h2 {
+    font-size: 1.2rem;
+  }
+  .slogan {
+    font-size: 0.75rem;
+  }
+}
