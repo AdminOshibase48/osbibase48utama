@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Berita - Oshibase48</title>
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=16" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header dengan Navbar -->
   <header class="header">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
@@ -18,26 +18,43 @@
         <p class="slogan">Rumah para Wota bersatu untuk Oshimen tercinta</p>
       </div>
     </div>
+    <nav class="navbar">
+      <input type="checkbox" id="toggle" class="toggle-checkbox">
+      <label for="toggle" class="hamburger">&#9776;</label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html" class="active">Berita</a></li>
+        <li><a href="jadwal.html">Jadwal</a></li>
+        <li><a href="about.html">Tentang</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Daftar Berita -->
   <section class="section" data-aos="fade-up">
     <h2>Berita Komunitas</h2>
-    <div class="grid berita-grid">
-      <div class="item">
+    <div class="berita-list">
+      <div class="berita-item">
         <img src="https://jkt48.com/upload/news/686789fe458cc.jpg" alt="berita 1" />
-        <h3>Pengumuman Mengenai Penjualan Digital Wallpaper Pack “Smash The Limits!” dengan bonus Video Call with JKT48 Virtual</h3>
-        <a href="#" class="https://jkt48.com/news/detail/id/1929?lang=id">Lihat Detail</a>
+        <div class="berita-text">
+          <h3>Penjualan Digital Wallpaper Pack “Smash The Limits!”</h3>
+          <a href="https://jkt48.com/news/detail/id/1929?lang=id" class="btn-berita" target="_blank">Lihat Detail</a>
+        </div>
       </div>
-      <div class="item">
+      <div class="berita-item">
         <img src="https://jkt48.com/upload/news/686690d3a3bd2.jpg" alt="berita 2" />
-        <h3>Pengumuman Mengenai Pre-Order Digital Photobook “MILES & MEMORIES OF JKT48 ALL IN TOUR 2025” dengan bonus Video Call with JKT48</h3>
-        <a href="#" class="https://jkt48.com/news/detail/id/1928?lang=id">Lihat Detail</a>
+        <div class="berita-text">
+          <h3>Pre-Order Digital Photobook “ALL IN TOUR 2025”</h3>
+          <a href="https://jkt48.com/news/detail/id/1928?lang=id" class="btn-berita" target="_blank">Lihat Detail</a>
+        </div>
       </div>
-      <div class="item">
-        <img src="https://jkt48.com/news/detail/id/1927?lang=id" />
-        <h3>Pengumuman Mengenai Hiatus Feni Fitriyanti dari JKT48</h3>
-        <a href="#" class="btn-berita">Lihat Detail</a>
+      <div class="berita-item">
+        <img src="https://jkt48.com/upload/news/7cfd7d7d3efde.jpg" alt="berita 3" />
+        <div class="berita-text">
+          <h3>Pengumuman Hiatus Feni Fitriyanti dari JKT48</h3>
+          <a href="https://jkt48.com/news/detail/id/1927?lang=id" class="btn-berita" target="_blank">Lihat Detail</a>
+        </div>
       </div>
     </div>
   </section>
