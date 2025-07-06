@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oshibase48 - Komunitas Wota JKT48</title>
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=15" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with Navbar -->
   <header class="header">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
@@ -19,16 +19,25 @@
         <p class="slogan">Rumah para Wota bersatu untuk Oshimen tercinta</p>
       </div>
     </div>
+    <nav class="navbar">
+      <input type="checkbox" id="toggle" class="toggle-checkbox">
+      <label for="toggle" class="hamburger">&#9776;</label>
+      <ul class="nav-links">
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="jadwal.html">Jadwal</a></li>
+        <li><a href="about.html">Tentang</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero Slider Galeri -->
   <section class="slider-section" data-aos="fade-up">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Ganti src gambar dengan galeri komunitas -->
-        <div class="swiper-slide"><img src="https://source.unsplash.com/800x400/?idol" alt="slide 1"></div>
-        <div class="swiper-slide"><img src="https://source.unsplash.com/800x400/?japan" alt="slide 2"></div>
-        <div class="swiper-slide"><img src="https://source.unsplash.com/800x400/?concert" alt="slide 3"></div>
+        <div class="swiper-slide"><img src="img/semarang.jpg" alt="slide 1"></div>
+        <div class="swiper-slide"><img src="img/perkenalan.png" alt="slide 2"></div>
+        <div class="swiper-slide"><img src="img/bandung.jpg" alt="slide 3"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -49,7 +58,7 @@
     </div>
   </footer>
 
-  <!-- JS Libraries -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
