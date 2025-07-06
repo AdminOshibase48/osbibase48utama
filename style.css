@@ -309,3 +309,52 @@ body {
     display: block;
   }
 }
+
+.berita-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.berita-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #f1f9ff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+.berita-item img {
+  width: 260px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.berita-text {
+  flex: 1;
+}
+
+.berita-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #2a63a8;
+}
+
+.btn-berita {
+  background: #2a63a8;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-berita:hover {
+  background: #164b86;
+}
