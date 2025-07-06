@@ -358,3 +358,14 @@ body {
 .btn-berita:hover {
   background: #164b86;
 }
+
+/* FIX FOOTER STICK TO BOTTOM */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer.footer {
+  margin-top: auto;
+}
