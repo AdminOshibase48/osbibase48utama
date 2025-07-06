@@ -151,3 +151,44 @@ body {
 .btn-berita:hover {
   background: #164b86;
 }
+
+.berita-grid .item {
+  background: #ffffff;
+  border-left: 4px solid #84b6f4;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.berita-grid .item:hover {
+  transform: translateY(-4px);
+}
+
+.berita-grid .item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.berita-grid .item h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #2a63a8;
+}
+
+.btn-berita {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #2a63a8;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-berita:hover {
+  background: #164b86;
+}
