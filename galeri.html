@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galeri - Oshibase48</title>
-  <link rel="stylesheet" href="style.css?v=14" />
+  <link rel="stylesheet" href="style.css?v=15" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes'; // aman untuk public
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
+  <!-- Header + Navbar -->
+  <header class="header" data-aos="fade-down">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
       <div class="brand">
@@ -18,19 +24,23 @@
         <p class="slogan">Rumah para Wota bersatu untuk Oshimen tercinta</p>
       </div>
     </div>
+    <nav class="navbar">
+      <input type="checkbox" id="toggle" class="toggle-checkbox">
+      <label for="toggle" class="hamburger">&#9776;</label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="jadwal.html">Jadwal</a></li>
+        <li><a href="about.html">Tentang</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Galeri -->
+  <!-- Galeri Section -->
   <section class="section" data-aos="fade-up">
     <h2>Galeri Komunitas</h2>
-    <div class="galeri-grid">
-      <img src="img/semarang.jpg" alt="galeri 1" />
-      <img src="img/bandung.jpg" alt="galeri 2" />
-      <img src="img/jakarta.jpg" alt="galeri 3" />
-      <img src="img/perkenalan.png" alt="galeri 4" />
-      <img src="https://source.unsplash.com/600x400/?japan,idol" alt="galeri 5" />
-      <img src="https://source.unsplash.com/600x400/?fans,concert" alt="galeri 6" />
-    </div>
+    <div id="galeri-container" class="galeri-grid"></div>
   </section>
 
   <!-- Footer -->
@@ -48,7 +58,36 @@
     </div>
   </footer>
 
+  <!-- Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
+
+  <script>
+    async function loadGaleri() {
+      const { data, error } = await supabase
+        .from("galeri")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      const container = document.getElementById("galeri-container");
+      container.innerHTML = "";
+
+      if (error) {
+        container.innerHTML = "<p>Gagal memuat galeri.</p>";
+        return;
+      }
+
+      data.forEach(item => {
+        container.innerHTML += `
+          <div class="galeri-card" data-aos="zoom-in">
+            <img src="${item.image_url}" alt="${item.caption}" />
+            <p>${item.caption}</p>
+          </div>
+        `;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadGaleri);
+  </script>
 </body>
 </html>
