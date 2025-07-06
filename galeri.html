@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galeri - Oshibase48</title>
-  <link rel="stylesheet" href="style.css?v=20" />
+  <link rel="stylesheet" href="style.css?v=18" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header" data-aos="fade-down">
+  <!-- Header dengan Navbar -->
+  <header class="header">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
       <div class="brand">
@@ -19,6 +19,8 @@
       </div>
     </div>
     <nav class="navbar">
+      <input type="checkbox" id="toggle" class="toggle-checkbox">
+      <label for="toggle" class="hamburger">&#9776;</label>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="galeri.html" class="active">Galeri</a></li>
@@ -32,9 +34,7 @@
   <!-- Galeri -->
   <section class="section" data-aos="fade-up">
     <h2>Galeri Komunitas</h2>
-    <div class="galeri-grid" id="galeri-container">
-      <p>Memuat galeri...</p>
-    </div>
+    <div id="galeri-container" class="galeri-grid"></div>
   </section>
 
   <!-- Footer -->
@@ -52,63 +52,40 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Supabase & AOS -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    <!-- Supabase Client -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    AOS.init();
 
-<script>
-  // ✅ Inisialisasi Supabase dulu
-  const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes'; // GANTI dengan key kamu
-  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes; // Ganti sesuai key kamu
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-  // ✅ Baru ambil data
-  document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById("galeri-container");
-    container.innerHTML = "<p>Memuat galeri...</p>";
+    async function loadGaleri() {
+      const { data, error } = await supabase.from('galeri').select('*').order('created_at', { ascending: false });
+      const container = document.getElementById('galeri-container');
 
-    const { data, error } = await supabase
-      .from('galeri')
-      .select('*')
-      .order('created_at', { ascending: false });
+      if (error) {
+        container.innerHTML = "<p>Gagal memuat galeri 😢</p>";
+        return;
+      }
 
-    if (error) {
-      console.error("Gagal:", error);
-      container.innerHTML = "<p>Gagal memuat galeri.</p>";
-      return;
+      if (data.length === 0) {
+        container.innerHTML = "<p>Belum ada galeri yang ditambahkan.</p>";
+        return;
+      }
+
+      data.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.url;
+        img.alt = item.judul;
+        img.setAttribute("data-aos", "fade-up");
+        container.appendChild(img);
+      });
     }
 
-    if (data.length === 0) {
-      container.innerHTML = "<p>Belum ada gambar di galeri.</p>";
-      return;
-    }
-
-    container.innerHTML = "";
-    data.forEach(item => {
-      const box = document.createElement("div");
-      box.classList.add("galeri-item");
-      box.setAttribute("data-aos", "zoom-in");
-
-      const img = document.createElement("img");
-      img.src = item.url;
-      img.alt = item.judul;
-
-      const caption = document.createElement("p");
-      caption.textContent = item.judul;
-
-      box.appendChild(img);
-      box.appendChild(caption);
-      container.appendChild(box);
-    });
-  });
-</script>
-
-<!-- AOS Animation -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
+    loadGaleri();
+  </script>
+</body>
+</html>
