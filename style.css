@@ -189,6 +189,40 @@ body {
   font-size: 0.9rem;
 }
 
+.jadwal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.jadwal-card {
+  background: #e4f3ff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  border-left: 5px solid #2a63a8;
+  transition: transform 0.2s ease;
+}
+
+.jadwal-card:hover {
+  transform: translateY(-3px);
+}
+
+.jadwal-card h3 {
+  color: #2a63a8;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.jadwal-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
 .btn-berita:hover {
   background: #164b86;
 }
