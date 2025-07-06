@@ -369,3 +369,101 @@ body {
 footer.footer {
   margin-top: auto;
 }
+
+/* RESPONSIVE SWIPER */
+.swiper {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ABOUT SECTION */
+.about-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-box img {
+  width: 280px;
+  border-radius: 12px;
+}
+
+.about-box p {
+  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* GALERI */
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.galeri-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* BERITA */
+.berita-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.berita-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f2f9ff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.berita-item img {
+  width: 180px;
+  border-radius: 8px;
+}
+
+.btn-berita, .btn-primary {
+  background: #2a63a8;
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-berita:hover, .btn-primary:hover {
+  background: #164b86;
+}
+
+.center {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* JADWAL */
+.jadwal-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
