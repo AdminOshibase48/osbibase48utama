@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galeri - Oshibase48</title>
-  <link rel="stylesheet" href="style.css?v=18" />
+  <link rel="stylesheet" href="style.css?v=20" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Header dengan Navbar -->
+  <!-- Header -->
   <header class="header">
     <div class="header-left">
       <img src="img/logo.png" alt="Logo" class="logo-small" />
@@ -52,36 +52,46 @@
     </div>
   </footer>
 
-  <!-- Supabase & AOS -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
 
     const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes; // Ganti sesuai key kamu
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes';
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
     async function loadGaleri() {
-      const { data, error } = await supabase.from('galeri').select('*').order('created_at', { ascending: false });
+      const { data, error } = await supabase
+        .from('galeri')
+        .select('*')
+        .order('created_at', { ascending: false });
+
       const container = document.getElementById('galeri-container');
 
       if (error) {
         container.innerHTML = "<p>Gagal memuat galeri 😢</p>";
+        console.error(error);
         return;
       }
 
-      if (data.length === 0) {
+      if (!data || data.length === 0) {
         container.innerHTML = "<p>Belum ada galeri yang ditambahkan.</p>";
         return;
       }
 
       data.forEach(item => {
-        const img = document.createElement('img');
-        img.src = item.url;
-        img.alt = item.judul;
-        img.setAttribute("data-aos", "fade-up");
-        container.appendChild(img);
+        const card = document.createElement("div");
+        card.className = "galeri-item";
+        card.setAttribute("data-aos", "fade-up");
+
+        card.innerHTML = `
+          <img src="${item.image_url}" alt="${item.title}" />
+          <p class="caption">${item.title}</p>
+        `;
+
+        container.appendChild(card);
       });
     }
 
