@@ -247,7 +247,7 @@ body {
   transform: scale(1.03);
 }
 
-/* Navbar */
+/* --- NAVBAR --- */
 .navbar {
   margin-left: auto;
   position: relative;
@@ -256,15 +256,17 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #2a63a8;
   font-weight: bold;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
@@ -272,10 +274,10 @@ body {
   color: #164b86;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
   color: #2a63a8;
 }
@@ -284,12 +286,12 @@ body {
   display: none;
 }
 
-/* Responsive Navbar */
+/* Responsive navbar */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #f0f8ff;
+    background: #eaf6ff;
     position: absolute;
     right: 0;
     top: 60px;
