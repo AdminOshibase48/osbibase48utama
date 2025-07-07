@@ -299,3 +299,42 @@ main, .main-content, .section {
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.swiper-slide img {
+  width: 100%;
+  height: auto; /* biar tingginya menyesuaikan isi */
+  object-fit: contain; /* biar tidak kepotong */
+  display: block;
+  max-height: 50vh; /* set batas tinggi maksimal agar tidak terlalu panjang di HP */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.about-box img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .swiper-slide img {
+    height: auto;
+    max-height: 40vh;
+  }
+
+  .about-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-box img {
+    max-width: 80%;
+  }
+}
