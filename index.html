@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshibase48</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Navigasi -->
   <header class="navbar">
-    <div class="logo" onclick="window.location.href='https://spj48tv.my.id'">Oshibase48</div>
+    <div class="logo" onclick="window.location.href='https://spj48tv.my.id'">
+      <img src="img/logo.png" alt="Logo" class="logo-img" />
+      <span>Oshibase48</span>
+    </div>
     <nav class="nav-right">
       <a href="#berita">Berita</a>
       <a href="#galeri">Galeri</a>
@@ -21,9 +25,9 @@
 
   <!-- Hero / Galeri Slide -->
   <section class="hero-slider">
-    <div class="slide show"><img src="img/aboutosb.png" alt="Slide 1" /></div>
-    <div class="slide"><img src="img/event.jpg" alt="Slide 2" /></div>
-    <div class="slide"><img src="img/jakarta.jpg" alt="Slide 3" /></div>
+    <div class="slide show"><img src="img/slide1.jpg" alt="Slide 1" /></div>
+    <div class="slide"><img src="img/slide2.jpg" alt="Slide 2" /></div>
+    <div class="slide"><img src="img/slide3.jpg" alt="Slide 3" /></div>
   </section>
 
   <!-- Apa itu Oshibase48 -->
@@ -41,26 +45,26 @@
   <section class="berita" id="berita">
     <h2>Berita Terupdate</h2>
     <div id="berita-list">
-      <!-- Berita dari panel admin akan dimuat lewat JS Supabase -->
+      <!-- Berita akan muncul di sini lewat JS -->
     </div>
   </section>
 
-  <!-- Galeri Foto -->
+  <!-- Galeri -->
   <section class="galeri" id="galeri">
     <h2>Galeri</h2>
     <div class="galeri-slider">
-      <div class="galeri-slide"><img src="img/eventjpg" alt="Galeri 1" /></div>
-      <div class="galeri-slide"><img src="img/cimahi.jpg" alt="Galeri 2" /></div>
-      <div class="galeri-slide"><img src="img/semarang.jpg" alt="Galeri 3" /></div>
+      <div class="galeri-slide"><img src="img/galeri1.jpg" alt="Galeri 1" /></div>
+      <div class="galeri-slide"><img src="img/galeri2.jpg" alt="Galeri 2" /></div>
+      <div class="galeri-slide"><img src="img/galeri3.jpg" alt="Galeri 3" /></div>
     </div>
     <button onclick="window.location.href='galeri.html'">Selengkapnya</button>
   </section>
 
-  <!-- Jadwal Acara -->
+  <!-- Jadwal -->
   <section class="jadwal" id="jadwal">
     <h2>Jadwal</h2>
     <div id="jadwal-list">
-      <!-- Jadwal dari panel admin juga dimuat lewat JS Supabase -->
+      <!-- Jadwal akan muncul di sini lewat JS -->
     </div>
   </section>
 
@@ -77,20 +81,18 @@
     </div>
   </footer>
 
-  <!-- Script Galeri Slide Otomatis (Opsional) -->
+  <!-- Slider Otomatis -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
 
     function showSlides() {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('show');
-      });
+      slides.forEach(slide => slide.classList.remove('show'));
       slideIndex = (slideIndex + 1) % slides.length;
       slides[slideIndex].classList.add('show');
     }
 
-    setInterval(showSlides, 3000);
+    setInterval(showSlides, 4000); // tiap 4 detik slide berubah
   </script>
 
 </body>
