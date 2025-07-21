@@ -4,63 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshibase48</title>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="index.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-content">
-      <div class="logo-title">
-        <img src="assets/img/logo.png" class="logo" />
-        <div>
-          <a href="index.html" class="site-title">Oshibase48</a>
-          <p class="slogan">Bersama Menyebarkan Semangat Idol</p>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="berita.html">Berita</a></li>
-          <li><a href="#">Shop</a></li>
-        </ul>
-      </nav>
-    </div>
+<body style="background-color: #F1EAD8; color: #242D4C; font-family: 'Poppins', sans-serif;">
+  <!-- Navigasi Atas -->
+  <header class="navbar" style="background-color: #242D4C; color: #F1EAD8; display: flex; justify-content: space-between; padding: 1rem 2rem; align-items: center; position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-left" onclick="window.location.href='https://spj48tv.my.id'" style="cursor: pointer; font-weight: bold; font-size: 1.5rem;">Oshibase48</div>
+    <nav class="nav-right">
+      <a href="#berita" style="margin: 0 1rem; color: #F1EAD8; text-decoration: none;">Berita</a>
+      <a href="#galeri" style="margin: 0 1rem; color: #F1EAD8; text-decoration: none;">Galeri</a>
+      <a href="#jadwal" style="margin: 0 1rem; color: #F1EAD8; text-decoration: none;">Jadwal</a>
+    </nav>
   </header>
 
-  <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/img/event.jpg" alt="Event" /></div>
-        <div class="swiper-slide"><img src="assets/img/bandung.jpg" alt="Bandung" /></div>
-        <div class="swiper-slide"><img src="assets/img/jakarta.jpg" alt="Jakarta" /></div>
-      </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-pagination"></div>
+  <!-- Hero / Galeri Slide -->
+  <section class="hero-slider" style="position: relative; overflow: hidden; max-height: 500px;">
+    <div class="slide show"><img src="img/event.jpg" alt="Slide 1" style="width: 100%; height: auto;" /></div>
+    <div class="slide"><img src="img/surabaya.jpg" alt="Slide 2" style="width: 100%; height: auto;" /></div>
+    <div class="slide"><img src="img/aboutosb.png" alt="Slide 3" style="width: 100%; height: auto;" /></div>
+  </section>
+
+  <!-- Apa itu Oshibase48 -->
+  <section class="intro" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 3rem 2rem; gap: 2rem;">
+    <div class="intro-text" style="flex: 1 1 300px;">
+      <h2>Apa itu Oshibase48?</h2>
+      <p>Oshibase48 adalah komunitas dukungan untuk para penggemar JKT48 yang menyediakan informasi, galeri, dan jadwal terbaru seputar idol kesayanganmu.</p>
+    </div>
+    <div class="intro-img" style="flex: 1 1 300px;">
+      <img src="img/aboutosb.jpg" alt="Tentang Oshibase48" style="width: 100%; height: auto; border-radius: 12px;" />
     </div>
   </section>
 
-  <!-- Konten lainnya (nanti kita lanjut) -->
+  <!-- Berita Terupdate -->
+  <section class="berita" id="berita" style="padding: 2rem;">
+    <h2>Berita Terupdate</h2>
+    <div id="berita-list" style="margin-top: 1rem;"></div>
+  </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      autoplay: { delay: 3000 },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
+  <!-- Galeri Foto -->
+  <section class="galeri" id="galeri" style="padding: 2rem;">
+    <h2>Galeri</h2>
+    <div class="galeri-slider" style="display: flex; gap: 1rem; overflow-x: auto;">
+      <div class="galeri-slide"><img src="img/jakarta.jpg" alt="Galeri 1" style="height: 200px; border-radius: 10px;" /></div>
+      <div class="galeri-slide"><img src="img/event.jpg" alt="Galeri 2" style="height: 200px; border-radius: 10px;" /></div>
+      <div class="galeri-slide"><img src="img/surabaya.jpg" alt="Galeri 3" style="height: 200px; border-radius: 10px;" /></div>
+      <div class="galeri-slide"><img src="img/semarang.jpg" alt="Galeri 4" style="height: 200px; border-radius: 10px;" /></div>
+      <div class="galeri-slide"><img src="img/cimahi.jpg" alt="Galeri 5" style="height: 200px; border-radius: 10px;" /></div>
+    </div>
+    <button onclick="window.location.href='galeri.html'" style="margin-top: 1rem; padding: 0.5rem 1.5rem; background-color: #242D4C; color: #F1EAD8; border: none; border-radius: 8px; cursor: pointer;">Selengkapnya</button>
+  </section>
+
+  <!-- Jadwal Acara -->
+  <section class="jadwal" id="jadwal" style="padding: 2rem;">
+    <h2>Jadwal</h2>
+    <div id="jadwal-list" style="margin-top: 1rem;"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: #242D4C; color: #F1EAD8; display: flex; justify-content: space-between; padding: 1rem 2rem; flex-wrap: wrap;">
+    <div class="footer-left" style="display: flex; align-items: center; gap: 0.5rem;">
+      <img src="img/logo.png" alt="Logo Oshibase48" style="height: 40px;" />
+      <span style="font-weight: bold;">Oshibase48</span>
+    </div>
+    <div class="footer-right" style="display: flex; gap: 1rem; align-items: center;">
+      <a href="https://www.instagram.com/oshibase48._" target="_blank" style="color: #F1EAD8; text-decoration: none;">Instagram</a>
+      <a href="https://twitter.com" target="_blank" style="color: #F1EAD8; text-decoration: none;">Twitter</a>
+      <a href="https://tiktok.com/@oshibase48ofc" target="_blank" style="color: #F1EAD8; text-decoration: none;">TikTok</a>
+    </div>
+  </footer>
 </body>
 </html>
