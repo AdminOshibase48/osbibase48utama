@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshibase48</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-content">
       <div class="logo-title">
-        <img src="img/logo.png" alt="Logo" class="logo"/>
-        <div class="title-text">
+        <img src="assets/img/logo.png" class="logo" />
+        <div>
           <a href="index.html" class="site-title">Oshibase48</a>
           <p class="slogan">Bersama Menyebarkan Semangat Idol</p>
         </div>
       </div>
       <nav class="main-nav">
-        <ul><li><a href="index.html">Beranda</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="berita.html">Berita</a></li><li><a href="#">Shop</a></li></ul>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -26,83 +37,29 @@
   <section class="hero-slider">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/img/perkenalan.png" alt="Slide 1"/></div>
-        <div class="swiper-slide"><img src="assets/img/event.jpg" alt="Slide 2"/></div>
-        <div class="swiper-slide"><img src="assets/img/bandung.jpg" alt="Slide 3"/></div>
-        <div class="swiper-slide"><img src="assets/img/jakarta.jpg" alt="Slide 4"/></div>
-        <div class="swiper-slide"><img src="assets/img/cimahi.jpg" alt="Slide 5"/></div>
-        <div class="swiper-slide"><img src="assets/img/semarang.jpg" alt="Slide 6"/></div>
+        <div class="swiper-slide"><img src="assets/img/event.jpg" alt="Event" /></div>
+        <div class="swiper-slide"><img src="assets/img/bandung.jpg" alt="Bandung" /></div>
+        <div class="swiper-slide"><img src="assets/img/jakarta.jpg" alt="Jakarta" /></div>
       </div>
-      <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <!-- Tentang -->
-  <section class="hero-about">
-    <div class="container flex-center">
-      <div class="hero-text">
-        <h1>Apa itu Oshibase48?</h1>
-        <p>Oshibase48 adalah komunitas penggemar idol group...</p>
-      </div>
-      <img src="img/aboutosb.png" alt="Tentang Kami" class="hero-image"/>
-    </div>
-  </section>
-
-  <!-- Galeri -->
-  <section class="gallery-preview">
-    <div class="container">
-      <h2>Galeri Kegiatan</h2>
-      <div class="gallery-slider">
-        <img src="img/cimahi.jpg" alt="Cimahi"/>
-        <img src="img/semarang.jpg" alt="Semarang"/>
-        <img src="img/bandung.jpg" alt="Bandung"/>
-      </div>
-      <a href="galeri.html" class="btn-primary">Lihat Selengkapnya</a>
-    </div>
-  </section>
-
-  <!-- Berita -->
-  <section class="news-preview">
-    <div class="container">
-      <h2>Berita Terbaru</h2>
-      <div id="news-list" class="news-list"><p>Memuat berita…</p></div>
-      <a href="berita.html" class="btn-primary">Lihat Semua Berita</a>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <img src="assets/img/logo.png" class="logo-footer"/>
-        <div><h4>Oshibase48</h4><p class="slogan">Bersama Menyebarkan Semangat Idol</p></div>
-      </div>
-      <div class="footer-right">
-        <a href="#">Instagram</a><a href="#">Twitter</a><a href="#">TikTok</a><a href="#">YouTube</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Konten lainnya (nanti kita lanjut) -->
 
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>
-    const SUPABASE_URL = "https://nuvfnnxuxtthbryesliu.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes";
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    document.addEventListener("DOMContentLoaded", () => {
-      new Swiper('.swiper-container', { loop: true, autoplay: { delay:4000 }, pagination:{el:'.swiper-pagination', clickable:true}, navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'} });
-
-      supabase.from('berita').select('*').order('created_at',{ascending:false}).limit(3).then(res=>{
-        const el = document.getElementById('news-list'); el.innerHTML='';
-        if(res.error) return el.innerHTML="<p>Gagal memuat berita.</p>";
-        if(res.data.length===0) return el.innerHTML="<p>Belum ada berita.</p>";
-        res.data.forEach(b=>{
-          el.innerHTML += `<article><h3>${b.judul}</h3><p>${b.isi.substring(0,120)}...</p></article>`;
-        });
-      });
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
   </script>
 </body>
