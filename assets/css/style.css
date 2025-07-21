@@ -179,3 +179,48 @@ body {
 .footer-right a:hover {
   text-decoration: underline;
 }
+
+/* Tambahan warna agar logo nggak nyatu */
+.site-header {
+  background-color: #4FA7F9; /* Biru segar, beda dengan logo */
+  color: white;
+  padding: 15px 0;
+}
+
+/* Animasi fade & slide */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.slide-in {
+  animation: slideIn 1.2s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Warna tombol dan hover */
+.btn-primary {
+  background-color: #3E8EDE;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5AAEFF;
+}
+
+/* Warna teks headline */
+h1, h2 {
+  color: #1a4d99;
+}
