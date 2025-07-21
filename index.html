@@ -3,161 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oshibase48 - Komunitas Wota JKT48</title>
-  <link rel="stylesheet" href="style.css?v=16" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <script>
-    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes; // Aman, karena public anon
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-  </script>
+  <title>Oshibase48</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="header-left">
-      <img src="img/logo.png" alt="Logo" class="logo-small" />
-      <div class="brand">
-        <h1>Oshibase48</h1>
-        <p class="slogan">Rumah para Wota bersatu untuk Oshimen tercinta</p>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo-title">
+        <img src="assets/img/logo.png" alt="Logo" class="logo" />
+        <div class="title-text">
+          <a href="index.html" class="site-title">Oshibase48</a>
+          <p class="slogan">Bersama Menyebarkan Semangat Idol</p>
+        </div>
       </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="navbar">
-      <input type="checkbox" id="toggle" class="toggle-checkbox">
-      <label for="toggle" class="hamburger">&#9776;</label>
-      <ul class="nav-links">
-        <li><a href="about.html">Tentang</a></li>
-        <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="berita.html">Berita</a></li>
-        <li><a href="jadwal.html">Jadwal</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero Slider -->
-  <section class="slider-section" data-aos="fade-up">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/aboutosb.png" alt="slide 1"></div>
-        <div class="swiper-slide"><img src="img/event.jpg" alt="slide 2"></div>
-        <div class="swiper-slide"><img src="img/semarang.jpg" alt="slide 3"></div>
-        <div class="swiper-slide"><img src="img/cimahi.jpg" alt="slide 4"></div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <img src="assets/img/perkenalan.png" alt="Tentang Kami" class="hero-image"/>
+      <div class="hero-text">
+        <h1>Apa itu Oshibase48?</h1>
+        <p>Oshibase48 adalah komunitas penggemar idol group yang berdedikasi menjadi rumah bagi para fans untuk berbagi informasi, dukungan, dan semangat positif. Kami hadir untuk mempererat hubungan antar penggemar dengan berbagai kegiatan seru dan informatif.</p>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <!-- Tentang -->
-  <section class="section" data-aos="fade-up">
-    <h2>Tentang Oshibase48</h2>
-    <div class="about-box">
-      <img src="img/aboutosb.png" alt="about" />
-      <p>
-        Oshibase48 adalah rumah bagi para Wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama. Bergabunglah bersama kami dan rasakan kekuatan fandom yang positif!
-      </p>
     </div>
   </section>
 
   <!-- Galeri -->
-  <section class="section" data-aos="fade-up">
-    <h2>Galeri Komunitas</h2>
-    <div id="galeri-container" class="galeri-grid"></div>
-    <div class="center">
-      <a href="galeri.html" class="btn-primary">Lihat Semua Galeri</a>
+  <section class="gallery-preview">
+    <div class="container">
+      <h2>Galeri Kegiatan</h2>
+      <div class="gallery-slider">
+        <img src="assets/img/bandung.jpg" alt="Bandung" />
+        <img src="assets/img/cimahi.jpg" alt="Cimahi" />
+        <img src="assets/img/event.jpg" alt="Event" />
+        <img src="assets/img/jakarta.jpg" alt="Jakarta" />
+        <img src="assets/img/semarang.jpg" alt="Semarang" />
+      </div>
+      <a href="galeri.html" class="btn-primary">Lihat Selengkapnya</a>
     </div>
   </section>
 
   <!-- Berita -->
-  <section class="section" data-aos="fade-up">
-    <h2>Berita Terbaru</h2>
-    <div id="berita-container" class="berita-list"></div>
-    <div class="center">
+  <section class="news-preview">
+    <div class="container">
+      <h2>Berita Terbaru</h2>
+      <div class="news-list" id="news-list">
+        <!-- Data berita dari Supabase akan muncul di sini -->
+        <p>Memuat berita...</p>
+      </div>
       <a href="berita.html" class="btn-primary">Lihat Semua Berita</a>
     </div>
   </section>
 
-  <!-- Jadwal -->
-  <section class="section" data-aos="fade-up">
-    <h2>Jadwal Kegiatan</h2>
-    <ul id="jadwal-container" class="jadwal-list"></ul>
-    <div class="center">
-      <a href="jadwal.html" class="btn-primary">Lihat Jadwal Lengkap</a>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="footer" data-aos="fade-up">
-    <div class="footer-left">
-      <img src="img/logo.png" alt="Logo" class="logo-small" />
-      <div class="brand">
-        <h2>Oshibase48</h2>
-        <p class="slogan">Rumah para Wota bersatu untuk Oshimen tercinta</p>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <img src="assets/img/logo.png" alt="Logo" class="logo-footer"/>
+        <div>
+          <h4>Oshibase48</h4>
+          <p class="slogan">Bersama Menyebarkan Semangat Idol</p>
+        </div>
       </div>
-    </div>
-    <div class="footer-sosmed">
-      <a href="https://instagram.com/oshibase48._" target="_blank">Instagram</a> |
-      <a href="https://tiktok.com/@oshibase48ofc" target="_blank">TikTok</a>
+      <div class="footer-right">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">TikTok</a>
+        <a href="#" target="_blank">YouTube</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>
-    AOS.init();
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: { delay: 3000 },
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
+    // GANTI dengan info dari Supabase kamu
+    const SUPABASE_URL = "https://nuvfnnxuxtthbryesliu.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes";
 
-    // ===== Supabase Fetch =====
-    async function loadGaleri() {
-      const { data } = await supabase.from("galeri").select("*").order("created_at", { ascending: false });
-      const container = document.getElementById("galeri-container");
-      container.innerHTML = "";
-      data.forEach(item => {
-        container.innerHTML += `
-          <div class="galeri-card">
-            <img src="${item.image_url}" alt="${item.caption}" />
-            <p>${item.caption}</p>
-          </div>`;
-      });
-    }
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     async function loadBerita() {
-      const { data } = await supabase.from("berita").select("*").order("created_at", { ascending: false });
-      const container = document.getElementById("berita-container");
-      container.innerHTML = "";
-      data.forEach(item => {
-        container.innerHTML += `
-          <div class="berita-item">
-            <img src="${item.image_url}" />
-            <div>
-              <h3>${item.title}</h3>
-              <a href="berita.html?id=${item.id}" class="btn-berita">Lihat Detail</a>
-            </div>
-          </div>`;
+      const { data, error } = await supabase
+        .from('berita')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(3);
+
+      const newsList = document.getElementById('news-list');
+      newsList.innerHTML = '';
+
+      if (error) {
+        newsList.innerHTML = "<p>Gagal memuat berita.</p>";
+        console.error("Supabase error:", error);
+        return;
+      }
+
+      if (data.length === 0) {
+        newsList.innerHTML = "<p>Belum ada berita terbaru.</p>";
+        return;
+      }
+
+      data.forEach(berita => {
+        const article = document.createElement('article');
+        article.innerHTML = `
+          <h3>${berita.judul}</h3>
+          <p>${berita.isi.substring(0, 120)}...</p>
+        `;
+        newsList.appendChild(article);
       });
     }
 
-    async function loadJadwal() {
-      const { data } = await supabase.from("jadwal").select("*").order("tanggal", { ascending: true });
-      const container = document.getElementById("jadwal-container");
-      container.innerHTML = "";
-      data.forEach(item => {
-        container.innerHTML += `<li><strong>${item.tanggal}:</strong> ${item.kegiatan}</li>`;
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      loadGaleri();
-      loadBerita();
-      loadJadwal();
-    });
+    document.addEventListener("DOMContentLoaded", loadBerita);
   </script>
+
 </body>
 </html>
