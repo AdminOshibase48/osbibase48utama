@@ -1,0 +1,181 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5faff;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  background-color: #3E8EDE;
+  color: white;
+  padding: 15px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.title-text .site-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.slogan {
+  font-size: 0.9rem;
+  color: #dceeff;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  padding: 40px 0;
+  background-color: #D9EFFF;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1rem;
+}
+
+/* Gallery */
+.gallery-preview {
+  padding: 40px 0;
+}
+
+.gallery-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.gallery-slider img {
+  height: 200px;
+  border-radius: 10px;
+}
+
+/* Button */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3E8EDE;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #4F9EF9;
+}
+
+/* News */
+.news-preview {
+  background-color: #F0F8FF;
+  padding: 40px 0;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-list article h3 {
+  margin-bottom: 5px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #F6FAFF;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-footer {
+  height: 40px;
+}
+
+.footer-right a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #3E8EDE;
+  font-weight: 500;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
