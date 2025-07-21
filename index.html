@@ -30,8 +30,8 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-content">
+  <section class="hero fade-in">
+    <div class="container hero-content slide-in">
       <img src="img/perkenalan.png" alt="Tentang Kami" class="hero-image"/>
       <div class="hero-text">
         <h1>Apa itu Oshibase48?</h1>
@@ -41,10 +41,10 @@
   </section>
 
   <!-- Galeri -->
-  <section class="gallery-preview">
+  <section class="gallery-preview fade-in">
     <div class="container">
       <h2>Galeri Kegiatan</h2>
-      <div class="gallery-slider">
+      <div class="gallery-slider slide-in">
         <img src="img/bandung.jpg" alt="Bandung" />
         <img src="img/cimahi.jpg" alt="Cimahi" />
         <img src="img/event.jpg" alt="Event" />
@@ -56,11 +56,10 @@
   </section>
 
   <!-- Berita -->
-  <section class="news-preview">
+  <section class="news-preview fade-in">
     <div class="container">
       <h2>Berita Terbaru</h2>
-      <div class="news-list" id="news-list">
-        <!-- Data berita dari Supabase akan muncul di sini -->
+      <div class="news-list slide-in" id="news-list">
         <p>Memuat berita...</p>
       </div>
       <a href="berita.html" class="btn-primary">Lihat Semua Berita</a>
@@ -68,7 +67,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer fade-in">
     <div class="container footer-content">
       <div class="footer-left">
         <img src="img/logo.png" alt="Logo" class="logo-footer"/>
@@ -78,10 +77,10 @@
         </div>
       </div>
       <div class="footer-right">
-        <a href="#" target="_blank">Instagram</a>
-        <a href="#" target="_blank">Twitter</a>
-        <a href="#" target="_blank">TikTok</a>
-        <a href="#" target="_blank">YouTube</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
       </div>
     </div>
   </footer>
@@ -89,10 +88,8 @@
   <!-- Supabase JS -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>
-    // GANTI dengan info dari Supabase kamu
     const SUPABASE_URL = "https://nuvfnnxuxtthbryesliu.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes";
-
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     async function loadBerita() {
@@ -107,12 +104,6 @@
 
       if (error) {
         newsList.innerHTML = "<p>Gagal memuat berita.</p>";
-        console.error("Supabase error:", error);
-        return;
-      }
-
-      if (data.length === 0) {
-        newsList.innerHTML = "<p>Belum ada berita terbaru.</p>";
         return;
       }
 
