@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshibase48</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigasi -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo" onclick="window.location.href='https://spj48tv.my.id'">
       <img src="img/logo.png" alt="Logo" class="logo-img" />
@@ -23,48 +27,48 @@
     </nav>
   </header>
 
-  <!-- Hero / Galeri Slide -->
+  <!-- Hero Slider -->
   <section class="hero-slider">
-    <div class="slide show"><img src="img/slide1.jpg" alt="Slide 1" /></div>
-    <div class="slide"><img src="img/slide2.jpg" alt="Slide 2" /></div>
-    <div class="slide"><img src="img/slide3.jpg" alt="Slide 3" /></div>
+    <div class="slide show"><img src="img/perkenalan.png" alt="Slide 1" /></div>
+    <div class="slide"><img src="img/event.jpg" alt="Slide 2" /></div>
+    <div class="slide"><img src="img/semarang.jpg" alt="Slide 3" /></div>
   </section>
 
   <!-- Apa itu Oshibase48 -->
   <section class="intro">
     <div class="intro-text">
-      <h2 class="animated fadeIn">Apa itu Oshibase48?</h2>
+      <h2>Apa itu Oshibase48?</h2>
       <p>Oshibase48 adalah komunitas dukungan untuk para penggemar JKT48 yang menyediakan informasi, galeri, dan jadwal terbaru seputar idol kesayanganmu.</p>
     </div>
     <div class="intro-img">
-      <img src="img/aboutosb.jpg" alt="Tentang Oshibase48" />
+      <img src="img/aboutosb.png" alt="Tentang Oshibase48" />
     </div>
   </section>
 
-  <!-- Berita Terupdate -->
-  <section class="berita" id="berita">
+  <!-- Berita -->
+  <section id="berita">
     <h2>Berita Terupdate</h2>
     <div id="berita-list">
-      <!-- Berita akan muncul di sini lewat JS -->
+      <!-- Berita akan dimuat dari Supabase -->
     </div>
   </section>
 
   <!-- Galeri -->
-  <section class="galeri" id="galeri">
+  <section id="galeri">
     <h2>Galeri</h2>
     <div class="galeri-slider">
-      <div class="galeri-slide"><img src="img/galeri1.jpg" alt="Galeri 1" /></div>
-      <div class="galeri-slide"><img src="img/galeri2.jpg" alt="Galeri 2" /></div>
-      <div class="galeri-slide"><img src="img/galeri3.jpg" alt="Galeri 3" /></div>
+      <div class="galeri-slide"><img src="img/event.jpg" alt="Galeri 1" /></div>
+      <div class="galeri-slide"><img src="img/cimahi.jpg" alt="Galeri 2" /></div>
+      <div class="galeri-slide"><img src="img/semarang.jpg" alt="Galeri 3" /></div>
     </div>
     <button onclick="window.location.href='galeri.html'">Selengkapnya</button>
   </section>
 
   <!-- Jadwal -->
-  <section class="jadwal" id="jadwal">
+  <section id="jadwal">
     <h2>Jadwal</h2>
     <div id="jadwal-list">
-      <!-- Jadwal akan muncul di sini lewat JS -->
+      <!-- Jadwal akan dimuat dari Supabase -->
     </div>
   </section>
 
@@ -92,7 +96,7 @@
       slides[slideIndex].classList.add('show');
     }
 
-    setInterval(showSlides, 4000); // tiap 4 detik slide berubah
+    setInterval(showSlides, 4000);
   </script>
 
 </body>
