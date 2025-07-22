@@ -1,10 +1,16 @@
-/* Global Styles */
+/* Reset dan Global Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #F1EAD8;
   color: #242D4C;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* Navbar */
@@ -18,60 +24,87 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  animation: fadeInDown 0.5s ease;
+  animation: fadeInDown 0.6s ease-in-out;
 }
-.navbar a {
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: pop 0.4s ease;
+}
+
+.logo-img {
+  height: 32px;
+  width: 32px;
+}
+
+.nav-right a {
   color: #F1EAD8;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.navbar a:hover {
+
+.nav-right a:hover {
   color: #FFD700;
 }
 
 /* Hero Slider */
 .hero-slider {
-  max-height: 500px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  max-height: 400px;
 }
+
 .slide {
   display: none;
   animation: fadeIn 1s ease-in-out;
 }
+
 .slide.show {
   display: block;
 }
+
 .hero-slider img {
   width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 
-/* Intro */
+/* Intro Section */
 .intro {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  padding: 3rem 2rem;
+  justify-content: center;
   gap: 2rem;
-  animation: fadeIn 1.5s ease;
+  padding: 3rem 2rem;
+  animation: fadeIn 1.2s ease;
 }
+
 .intro-text {
   flex: 1 1 300px;
 }
+
 .intro-img {
   flex: 1 1 300px;
 }
+
 .intro-img img {
-  width: 100%;
   border-radius: 12px;
 }
 
 /* Sections */
 section {
   padding: 2rem;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* Berita */
@@ -88,25 +121,23 @@ section {
   gap: 1rem;
   overflow-x: auto;
   margin-top: 1rem;
+  padding-bottom: 1rem;
 }
+
+.galeri-slide {
+  flex: 0 0 auto;
+}
+
 .galeri-slide img {
   height: 200px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
+
 .galeri-slide img:hover {
   transform: scale(1.05);
 }
 
-/* Jadwal */
-#jadwal-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Buttons */
 button {
   background-color: #242D4C;
   color: #F1EAD8;
@@ -117,8 +148,17 @@ button {
   margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #1a2033;
+}
+
+/* Jadwal */
+#jadwal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Footer */
@@ -127,39 +167,69 @@ footer {
   color: #F1EAD8;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
   flex-wrap: wrap;
+  padding: 1rem 2rem;
+  align-items: center;
 }
+
 .footer-left {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .footer-left img {
-  height: 40px;
+  height: 32px;
 }
+
 .footer-right {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+
 .footer-right a {
   color: #F1EAD8;
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .footer-right a:hover {
   color: #FFD700;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeInDown {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Responsive */
@@ -168,12 +238,18 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .nav-right {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 1rem;
   }
+
+  .intro {
+    flex-direction: column;
+  }
+
   .galeri-slider {
     flex-direction: column;
     align-items: center;
