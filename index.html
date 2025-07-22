@@ -4,23 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshibase48</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo" onclick="window.location.href='https://spj48tv.my.id'">
-      <img src="img/logo.png" alt="Logo" class="logo-img" />
-      <span>Oshibase48</span>
+    <div class="logo">
+      <img src="img/favicon.png" alt="Logo" class="logo-img">
+      Oshibase48
     </div>
     <nav class="nav-right">
+      <a href="#home">Home</a>
+      <a href="#tentang">Tentang</a>
       <a href="#berita">Berita</a>
       <a href="#galeri">Galeri</a>
       <a href="#jadwal">Jadwal</a>
@@ -28,76 +25,71 @@
   </header>
 
   <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="slide show"><img src="img/perkenalan.png" alt="Slide 1" /></div>
-    <div class="slide"><img src="img/event.jpg" alt="Slide 2" /></div>
-    <div class="slide"><img src="img/semarang.jpg" alt="Slide 3" /></div>
+  <section id="home" class="hero-slider">
+    <div class="slide show"><img src="img/aboutosb.png" alt="Slide 1"></div>
+    <div class="slide"><img src="img/event.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="img/semarang.jpg" alt="Slide 3"></div>
   </section>
 
-  <!-- Apa itu Oshibase48 -->
-  <section class="intro">
+  <!-- Tentang Section -->
+  <section id="tentang" class="intro">
     <div class="intro-text">
       <h2>Apa itu Oshibase48?</h2>
-      <p>Oshibase48 adalah komunitas dukungan untuk para penggemar JKT48 yang menyediakan informasi, galeri, dan jadwal terbaru seputar idol kesayanganmu.</p>
+      <p>Oshibase48 adalah komunitas digital untuk mendukung idol group JKT48 melalui berbagai informasi, galeri, berita, dan aktivitas penggemar yang disajikan secara menarik dan responsif.</p>
     </div>
     <div class="intro-img">
-      <img src="img/aboutosb.png" alt="Tentang Oshibase48" />
+      <img src="img/aboutosb.png" alt="Tentang Oshibase">
     </div>
   </section>
 
-  <!-- Berita -->
+  <!-- Berita Section -->
   <section id="berita">
-    <h2>Berita Terupdate</h2>
+    <h2>Berita Terbaru</h2>
     <div id="berita-list">
-      <!-- Berita akan dimuat dari Supabase -->
+      <article>
+        <h3>Judul Berita 1</h3>
+        <p>Konten berita terbaru yang ditarik dari panel admin akan tampil di sini.</p>
+      </article>
+      <article>
+        <h3>Judul Berita 2</h3>
+        <p>Berita seputar aktivitas JKT48 dan update komunitas Oshibase48.</p>
+      </article>
     </div>
   </section>
 
-  <!-- Galeri -->
+  <!-- Galeri Section -->
   <section id="galeri">
-    <h2>Galeri</h2>
+    <h2>Galeri Terbaru</h2>
     <div class="galeri-slider">
-      <div class="galeri-slide"><img src="img/event.jpg" alt="Galeri 1" /></div>
-      <div class="galeri-slide"><img src="img/cimahi.jpg" alt="Galeri 2" /></div>
-      <div class="galeri-slide"><img src="img/semarang.jpg" alt="Galeri 3" /></div>
+      <div class="galeri-slide"><img src="img/event.jpg" alt="Galeri 1"></div>
+      <div class="galeri-slide"><img src="img/cimahi.jpg" alt="Galeri 2"></div>
+      <div class="galeri-slide"><img src="img/semarang.jpg" alt="Galeri 3"></div>
     </div>
-    <button onclick="window.location.href='galeri.html'">Selengkapnya</button>
+    <button onclick="window.location.href='galeri.html'">Lihat Selengkapnya</button>
   </section>
 
-  <!-- Jadwal -->
+  <!-- Jadwal Section -->
   <section id="jadwal">
-    <h2>Jadwal</h2>
+    <h2>Jadwal Tampil</h2>
     <div id="jadwal-list">
-      <!-- Jadwal akan dimuat dari Supabase -->
+      <div>26 Juli 2025 - Theater Show "Full House"</div>
+      <div>2 Agustus 2025 - Mini Live Event</div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-left">
-      <img src="img/logo.png" alt="Logo Oshibase48" />
+      <img src="img/logo.png" alt="Logo">
       <span>Oshibase48</span>
     </div>
     <div class="footer-right">
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-      <a href="https://tiktok.com" target="_blank">TikTok</a>
+      <a href="https://instagram.com/oshibase48" target="_blank">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">X (Twitter)</a>
     </div>
   </footer>
 
-  <!-- Slider Otomatis -->
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlides() {
-      slides.forEach(slide => slide.classList.remove('show'));
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add('show');
-    }
-
-    setInterval(showSlides, 4000);
-  </script>
-
+  <script src="index.js"></script>
 </body>
 </html>
