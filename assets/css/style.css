@@ -11,6 +11,13 @@ body {
 img {
   max-width: 100%;
   display: block;
+  height: auto;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Navbar */
@@ -25,6 +32,7 @@ img {
   top: 0;
   z-index: 1000;
   animation: fadeInDown 0.6s ease-in-out;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -42,9 +50,14 @@ img {
   width: 32px;
 }
 
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .nav-right a {
   color: #F1EAD8;
-  margin-left: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -71,6 +84,7 @@ img {
 
 .hero-slider img {
   width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -79,32 +93,27 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
-  padding: 3rem 2rem;
   animation: fadeIn 1.2s ease;
 }
 
 .intro-text {
-  flex: 1 1 300px;
+  flex: 1 1 45%;
 }
 
 .intro-img {
-  flex: 1 1 300px;
+  flex: 1 1 45%;
 }
 
 .intro-img img {
   border-radius: 12px;
 }
 
-/* Sections */
-section {
-  padding: 2rem;
-}
-
 section h2 {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 /* Berita */
@@ -122,10 +131,12 @@ section h2 {
   overflow-x: auto;
   margin-top: 1rem;
   padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
 }
 
 .galeri-slide {
   flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .galeri-slide img {
@@ -147,6 +158,9 @@ button {
   cursor: pointer;
   margin-top: 1rem;
   transition: background-color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover {
@@ -170,6 +184,7 @@ footer {
   flex-wrap: wrap;
   padding: 1rem 2rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .footer-left {
@@ -186,6 +201,7 @@ footer {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-right a {
@@ -237,21 +253,35 @@ footer {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
   }
 
   .nav-right {
-    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.5rem;
-    margin-top: 1rem;
   }
 
   .intro {
     flex-direction: column;
   }
 
+  .intro-text,
+  .intro-img {
+    flex: 1 1 100%;
+  }
+
   .galeri-slider {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  footer {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 }
